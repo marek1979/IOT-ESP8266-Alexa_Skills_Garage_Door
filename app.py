@@ -70,9 +70,9 @@ class HttpWSSProtocol(websockets.WebSocketServerProtocol):
             self.rddata = await self.rwebsocket.recv()
 
             response = '\r\n'.join([
-                'HTTP/1.1 200 OK',
-                'Content-Type: text/json',
-                '',
+                'HTTP/1.1 200 OK\r\n',
+                'Content-Type: text/json\r\n',
+                '\r\n',
                 ''+self.rddata+'',
             ])
         except Exception as e:
